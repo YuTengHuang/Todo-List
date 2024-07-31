@@ -1,0 +1,232 @@
+
+:root{
+  --bg-5050: #505050;
+  --bg-2222: #222222;
+  --white: white;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  background: var(--bg-5050);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+.todoWrapper{
+  user-select: none;
+  background: var(--bg-2222);
+  color: var(--white);
+  width: 900px;
+  text-align: center;
+  padding: 30px;
+  margin: 30px;
+}
+
+.title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todoContents{
+  width: 100%;
+  height: 500px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
+}
+
+.todoContent{
+  display: flex;
+  flex-direction: column;
+}
+
+.create-form{
+  margin: 25px 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid var(--bg-5050);
+  border-radius: 10px;
+}
+
+.create-form > textarea{
+  outline: none;
+  background: none;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px 0 0 10px;
+  color: var(--white);
+  font-size: 20px;
+  resize: none;
+}
+
+.create-form > button{
+  border: 0;
+  background: var(--bg-5050);
+  width: 80px;
+  height: auto;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  color: var(--white);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.create-form > button:disabled{
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.todo{
+  background: var(--bg-5050);
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.todo > p{
+  padding-left: 10px;
+  width: 100%;
+  line-height: 50px;
+  text-align: start;
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.check-btn{
+  background-color: transparent;
+  border: 0;
+  height: 100%;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.todo-btns{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-btns button{
+  width: calc(50% - 10px);
+  height: 100%;
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--white);
+}
+
+.todo-btns button:disabled{
+  cursor: not-allowed;
+}
+
+.tooltip{
+  position: absolute;
+  visibility: hidden;
+  background: var(--bg-2222);
+  border: 1px solid var(--white);
+  color: var(--white);
+  border-radius: 10px;
+  width: 70px;
+  height: 30px;
+  font-size: 20px;
+  opacity: 0;
+  transform: translateX(-50px) translateY(-40px);
+}
+
+.hover-title:hover .tooltip{
+  opacity: 1;
+  visibility: visible;
+  transition: .3s;
+}
+
+.done{
+  opacity: 0.4;
+  text-decoration: line-through 3px white;
+}
+
+
+
+.allContent-bar{
+  background-color: var(--bg-5050);
+  color: var(--white);
+  height: 400px;
+  width: calc(100% - 163px);
+  transform: translateY(-50px);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  opacity: 0;
+  font-size: 20px;
+  text-align: start;
+  position: relative;
+  overflow-y: auto;
+  display: none;
+  visibility: hidden;
+  scrollbar-gutter: stable;
+  padding: 14px 0 0 10px;
+  border-radius: 10px;
+  word-wrap:break-word;
+  
+}
+
+
+.allContent-bar.showAll:read-only {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
+.filterLinks{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.filterLinks span{
+  flex-grow: 1;
+  font-size: 30px;
+  font-weight: 600;
+  padding: 10px;
+  transition: .3s;
+
+  text-align: center;
+  cursor: pointer;
+  color: grey;
+
+  border-bottom: 1px solid var(--bg-5050);
+}
+
+.filterLinks span.active{
+  color: var(--white);
+  border-radius: 5px 5px 0 0;
+  background-color: grey;
+  border-bottom: 1px solid var(--white);
+}
+
+.filterLinks span:hover{
+  color: var(--white);
+  border-bottom: 1px solid var(--white);
+}
+
