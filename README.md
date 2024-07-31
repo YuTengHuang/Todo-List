@@ -1,5 +1,5 @@
 # Live Demo
--[Live-Demo](https://yutenghuang.github.io/Todo-List/)
+- [Live-Demo](https://yutenghuang.github.io/Todo-List/)
 
 # React + TypeScript + Vite
 
