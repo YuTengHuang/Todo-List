@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { TodoContext } from "../context/TodoContext"
 
 type Props={
@@ -10,7 +10,7 @@ const CreateForm: React.FC<Props> = () =>{
     const { addTodo } = React.useContext(TodoContext)!;
     const [content, setContent] = React.useState<string>('');
 
-    const handleForm = (e: React.FormEvent<HTMLTextAreaElement>): void => {
+    const handleForm: React.ComponentProps<"textarea">["onChange"] = (e) => {
         setContent(e.currentTarget.value)
     };
 

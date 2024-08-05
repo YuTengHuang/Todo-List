@@ -10,7 +10,7 @@ const EditForm: React.FC<EdittodoFuncProp> = ({todo, EditTodo})=>{
 
     const [content, setContent] = useState(todo.content)
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) =>{
+    const handleSubmit: React.ComponentProps<"form">["onSubmit"] = (e) =>{
         e.preventDefault()
         content.trim()? EditTodo(todo.id, content) : alert("不能是空白字")
     }
